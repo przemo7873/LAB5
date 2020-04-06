@@ -20,7 +20,13 @@ public class CounterServlet extends HttpServlet
             throws ServletException, IOException 
     {
         HttpSession session = request.getSession();
-        licznik++;
+        if(session.getAttribute("licznik")==null) 
+            licznik =1;
+        else 
+        {
+            licznik = (Integer) session.getAttribute("licznik");
+            licznik++;
+        }
         session.setAttribute("licznik", licznik);
         request.getRequestDispatcher("counter.jsp").forward(request, response);
     }
