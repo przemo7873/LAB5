@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 @WebServlet(name = "CounterServlet", urlPatterns = {"/counter"})
 public class CounterServlet extends HttpServlet 
 {
-    private Integer licznik=0;
+    private Integer licznik;
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException 
